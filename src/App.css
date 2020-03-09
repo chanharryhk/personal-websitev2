@@ -40,14 +40,30 @@ body {
   height: 3px;
   background: white;
 }
+.Subtitle
+{
+  position: absolute;
+  top: 65%;
+  /* left: 50%; */
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 700;
+  font-size: 4em;
+  transform: translate3d(-50%, 0, 0);
+  margin: 0;
+  color: white;
+  line-height: 0.9em;
+  letter-spacing: -5px;
+  text-align: center;
+}
 
 h1 {
   position: absolute;
-  top: 225px;
+  top: 250px;
   left: 50%;
+  text-transform: uppercase;
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 800;
-  font-size: 10em;
+  font-weight: 700;
+  font-size: 8em;
   transform: translate3d(-50%, 0, 0);
   margin: 0;
   color: white;
@@ -131,9 +147,10 @@ a {
   color: white;
 }
 
-a.top-left {
+div.top-left {
   top: 60px;
   left: 60px;
+  position: absolute;
 }
 
 a.top-right {

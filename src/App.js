@@ -15,6 +15,13 @@ const CyberTruck = () => {
   return model ? <primitive object={model.scene} /> : null
 }
 
+const Subtitle = () => {
+  const [count, setCount] = useState(0);
+  return (
+      <h1 className="Subtitle">HELLO</h1>
+  );
+}
+
 
 const Controls = () => {
   const orbitRef = useRef()
@@ -33,8 +40,8 @@ const Controls = () => {
       enableDamping
       dampingFactor={0.5}
       rotateSpeed={1}
-      maxPolarAngle={Math.PI / 3}
-      minPolarAngle={Math.PI / 3}
+      maxPolarAngle={Math.PI / 2}
+      minPolarAngle={Math.PI / 2}
       args={[camera, gl.domElement]}
       ref={orbitRef}
     />
@@ -74,11 +81,12 @@ const Box = () => {
 }
 
 function App() {
+  
   return (
     <>
       <div className="App">
         <h1>Harry Chan</h1>
-        <Canvas camera={{position: [0,0,2.5]}} shadowMap>
+        <Canvas camera={{position: [0,0,2.75]}} shadowMap>
             <ambientLight intensity={1.5} />
             <pointLight intensity={2} position={[-10, -25, -10]} />
             <spotLight
@@ -93,9 +101,14 @@ function App() {
             {/* <Box /> */}
             <CyberTruck />
         </Canvas>
-        <a href="https://github.com/drcmda/learnwithjason" className="top-left" children="Github" />
-        <a href="https://twitter.com/0xca0a" className="top-right" children="Twitter" />
-        <a href="https://github.com/drcmda/react-three-fiber" className="bottom-left" children="Software Engineer" />
+        <Subtitle/>
+        {/* <h1 className="Subtitle">SOFTWARE ENGINEER</h1> */}
+        <div className="top-left">
+          <a href="https://github.com/drcmda/learnwithjason" children="Github" />
+          <a href="https://github.com/drcmda/learnwithjason" children="FUCk" />
+        </div>
+        <a href="https://twitter.com/0xca0a" className="top-right" children="Resume" />
+        <a href="https://github.com/drcmda/react-three-fiber" className="bottom-right" children="Software Engineer" />
       </div>
     </>
   );

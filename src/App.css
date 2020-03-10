@@ -15,60 +15,40 @@ body {
 
 .App {
   position: absolute;
-  background: radial-gradient(at 50% 50%, #873740 0%, #272730 40%, #171720 80%, #070710 100%);
+  background: radial-gradient(at 50% 50%, #7b8293 0%, #525d71 40%, #061324 80%, #061324 100%);
 }
 
-.loading {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  background: #171717;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.loading-bar-container {
-  width: 200px;
-  height: 3px;
-  background: #272727;
-}
-
-.loading-bar {
-  height: 3px;
-  background: white;
-}
 .Subtitle
 {
   position: absolute;
   top: 65%;
-  /* left: 50%; */
-  font-family: 'Josefin Sans', sans-serif;
+  left: 50%;
+  text-transform: uppercase;
+  font-family: 'Arial', Helvetica, sans-serif;
   font-weight: 700;
   font-size: 4em;
   transform: translate3d(-50%, 0, 0);
   margin: 0;
-  color: white;
+  color: #d1d4da;
   line-height: 0.9em;
-  letter-spacing: -5px;
+  letter-spacing: 1px;
   text-align: center;
 }
 
 h1 {
+  width: 100%;
   position: absolute;
-  top: 250px;
+  top: 240px;
   left: 50%;
   text-transform: uppercase;
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Arial', Helvetica, sans-serif;
   font-weight: 700;
   font-size: 8em;
   transform: translate3d(-50%, 0, 0);
   margin: 0;
-  color: white;
+  color: #d1d4da;
   line-height: 0.9em;
-  letter-spacing: -5px;
+  letter-spacing: 1px;
   text-align: center;
 }
 
@@ -113,30 +93,8 @@ span.header-left {
   width: 200px;
 }
 
-@media only screen and (max-width: 600px) {
-  a.bottom-left {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 1000px) {
-  h1 {
-    transform: translate3d(-50%, 0, 0);
-    font-size: 8em;
-    letter-spacing: -5px;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  h1 {
-    transform: translate3d(-50%, 0%, 0);
-    font-size: 4em;
-    letter-spacing: -5px;
-  }
-}
-
 a {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Arial', Helvetica, sans-serif;
   font-weight: 400;
   font-size: 18px;
   color: inherit;
@@ -151,6 +109,10 @@ div.top-left {
   top: 60px;
   left: 60px;
   position: absolute;
+}
+
+a.top-left {
+  margin: auto;
 }
 
 a.top-right {

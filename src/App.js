@@ -15,11 +15,40 @@ const CyberTruck = () => {
   return model ? <primitive object={model.scene} /> : null
 }
 
-const Subtitle = () => {
+function useInterval(callback, delay) {
+  const savedCallback = useRef();
+
+  // Remember the latest function.
+  useEffect(() => {
+    savedCallback.current = callback;
+  }, [callback]);
+
+  // Set up the interval.
+  useEffect(() => {
+    function tick() {
+      savedCallback.current();
+    }
+    if (delay !== null) {
+      let id = setInterval(tick, delay);
+      return () => clearInterval(id);
+    }
+  }, [delay]);
+}
+
+function Subtitle() {
   const [count, setCount] = useState(0);
-  return (
-      <h1 className="Subtitle">HELLO</h1>
-  );
+  const titles = ["tesla enthusiast", "software engineer", "data scientist"];
+  console.log(count);
+  useInterval(() => {
+    // Your custom logic here
+    if (count !== titles.length - 1) {
+      setCount(count + 1);
+    } else {
+      setCount(0);
+    }
+  }, 3000);
+
+  return <h1 className="Subtitle">{titles[count]}</h1>;
 }
 
 
@@ -104,11 +133,10 @@ function App() {
         <Subtitle/>
         {/* <h1 className="Subtitle">SOFTWARE ENGINEER</h1> */}
         <div className="top-left">
-          <a href="https://github.com/drcmda/learnwithjason" children="Github" />
-          <a href="https://github.com/drcmda/learnwithjason" children="FUCk" />
+          <a className="top-left" href="https://github.com/chanharryhk" children="Github" />
         </div>
-        <a href="https://twitter.com/0xca0a" className="top-right" children="Resume" />
-        <a href="https://github.com/drcmda/react-three-fiber" className="bottom-right" children="Software Engineer" />
+        <a href="https://www.linkedin.com/" className="top-right" children="LinkedIn" />
+        {/* <a href="" className="bottom-right" children="Software Engineer" /> */}
       </div>
     </>
   );
